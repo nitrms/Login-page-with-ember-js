@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>login</title>     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="styles/kendo.common.min.css" rel="stylesheet">
+    <link href="styles/kendo.default.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cloud.github.com/downloads/emberjs/ember.js/ember-0.9.6.min.js"></script>
+     
+  
+    <script src="js/kendo.web.min.js"></script>
+    <script src="js/app.js" ></script>
+    <script>
+        $("document").ready(
+        
+            function(){
+                    var window = $("#window");
+                     window.kendoWindow({
+                        width: "300px",
+                        height: "200px",
+                        title: "Login...",
+                        draggable:false,
+                        resizable:false,
+                        actions:[]
+                       
+                       
+                    });
+					
+                
+                   window.data("kendoWindow").center();
+                  
+                 }
+        );
+    </script>
+    
+        
+        
+    </head>
+    <body>
+     
+        
+        <div id="window">
+             <script type="text/x-handlebars" >
+                {{#view App.LoginFormView }}
+                    <label>Username:</label>
+                    {{view Ember.TextField  placeholder="username" valueBinding="username"}} </br>  </br>
+                    <label>Password:</label>
+                    {{view Ember.TextField placeholder="password" type="password" valueBinding="password"}}</br> </br>
+                    {{#view Ember.Button target="parentView" action="submit"}}Login{{/view}}
+                {{/view}}
+            </script>
+        </div>
+       
+        
+    </body>
+</html>
